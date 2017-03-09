@@ -5,12 +5,12 @@ My Vehicle Detection and Tracking project for Udacity Self Driving Car Nanodegre
 [sample_car_notcar.png]: ./output_images/sample_car_notcar.png
 [HOG_features_YCrCb.png]: ./output_images/HOG_features_YCrCb.png
 [before_after_normalization.png]: ./output_images/before_after_normalization.png
-[sliding_windows_6.png.png]: ./output_images/sliding_windows_6.png
+[sliding_windows_6.png]: ./output_images/sliding_windows_6.png
 [w_heatmap_testimage6.png]: ./output_images/w_heatmap_testimage6.png
 [w_heatmap_testimage6_labels.png]: ./output_images/w_heatmap_testimage6_labels.png
 [video_sample_image.png]: ./output_images/video_sample_image.png
 
-[//]: # ![alt text][A.png]
+[//]: # (![alt text][A.png])
 
 Overview
 ---
@@ -21,6 +21,7 @@ Data source
 Data is provided with a labeled dataset and the job is to decide what features to extract, then train a classifier and ultimately track vehicles in a video stream. Here are links to the labeled data for [vehicle](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/vehicles.zip) and [non-vehicle](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/non-vehicles.zip) examples to train your classifier.  These example images come from a combination of the [GTI vehicle image database](http://www.gti.ssr.upm.es/data/Vehicle_database.html), the [KITTI vision benchmark suite](http://www.cvlibs.net/datasets/kitti/), and examples extracted from the project video itself.
 
 Basic steps of this project:
+---
 Step1: Data exploration
 There are 8792 number of samples in cars set, 8968 number of samples in notcars set. 
 We plot example car and not car image to have a general idea about the dataset. 
@@ -84,8 +85,9 @@ Step6: Build video pipeline to process streaming videos with bounding box to det
 * ClassifierData.p, ProcessedData.p (temperaly output data files for easy resume work)
 * lesson_functions.py (functions build in course which helps extract image car features)
 * folder `output_images` (output images)
-* 
+* project_video.mp4, processed_r3_MZ_project_video.mp4, processed_wLane_r4_project_video.mp4 (original mp4 and output vehicle detection and tracking without and with advanced lane finding)
 
 ### Discussion
-As we could see from the output video, the vehicle detection is still not perfect yet as it sometimes gives pretty large bounding box onto the car which in practice means low accuracy of knowing where exactly the car is. An improvement could be using smaller sliding windows or apply higher threshold on heatmap. 
+As we could see from the output video, the vehicle detection is still not perfect yet as it sometimes gives pretty large bounding box onto the car which in practice means low accuracy of knowing where exactly the car is. Also there are still some false positive in some cases especially some road rails. An improvement could be using smaller sliding windows or apply higher threshold on heatmap. 
+
 Another further possible improvement is to achieve better testing accuracy using deep learning method instead of linear SVM. However using deep learning may require more carefulness in terms of responsiveness in real time driving.  
