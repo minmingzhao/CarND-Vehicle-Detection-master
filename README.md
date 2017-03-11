@@ -10,7 +10,6 @@ My Vehicle Detection and Tracking project for Udacity Self Driving Car Nanodegre
 [w_heatmap_testimage6_labels.png]: ./output_images/w_heatmap_testimage6_labels.png
 [video_sample_image.png]: ./output_images/video_sample_image.png
 
-[//]: # (![alt text][A.png])
 
 Overview
 ---
